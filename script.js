@@ -2,12 +2,9 @@
 
 let weatherInfo = [];
 
-// OpenWeatherMaps API KEY (change value to your key!!)
 let WEATHER_API_KEY = config.WEATHER_API_KEY;
-// Mapbox API KEY (change value to your key!!)
-mapboxgl.accessToken = config.MAPBOX_KEY;
 
-// Mapbox API //
+mapboxgl.accessToken = config.MAPBOX_KEY;
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
   enableHighAccuracy: true,
@@ -54,7 +51,7 @@ function setupMap(center) {
         const marker = new mapboxgl.Marker({
           color: "#FFFFFF",
           draggable: false,
-          color: "#D3D3D3",
+          color: "#A9A9A9",
           scale: 1.5,
         })
           .setLngLat([longitude, latitude])
@@ -72,7 +69,7 @@ function setupMap(center) {
         if ((weatherInfo.length = 0)) {
           window.location.reload(true);
         }
-      }, 1250);
+      }, 1500);
     })
   );
 }
